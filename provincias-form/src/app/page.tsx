@@ -73,18 +73,24 @@ export default function Home() {
                             <input className='form-control'
                                 placeholder="(Sin puntos)"
                                 {...register("dni", {
-                                    valueAsNumber: true,
                                     required: 'Este campo es obligatorio',
                                     validate: validateDNI,
+                                    pattern: {
+                                        value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                                        message: 'DNI invalido.'
+                                    }
                                 })} />
                             <small className='texto-validaciones'>{errors.dni?.message}</small>
                         </div>
                         <div>
                             <label className='form-label'>Edad</label>
                             <input className='form-control' {...register("edad", {
-                                valueAsNumber: true,
                                 required: 'Este campo es obligatorio',
                                 validate: validateEdad,
+                                pattern: {
+                                    value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                                    message: 'Edad invalida.'
+                                }
                             })} />
                             <small className='texto-validaciones'>{errors.edad?.message}</small>
                         </div>
