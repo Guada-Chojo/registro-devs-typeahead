@@ -126,7 +126,6 @@ export default function Home() {
                                         <Typeahead
                                             {...field}
                                             id="basic-typeahead-single"
-                                            placeholder="Provincia"
                                             labelKey="name"
                                             aria-describedby="typeaheadError"
                                             options={provinciasArray} />
